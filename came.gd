@@ -11,7 +11,4 @@ func _ready():
 	pass # Replace with function body.
 
 
-var speed = 100
 
-func _process(delta):
-	position.y += speed * delta

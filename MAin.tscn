@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Spider.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Spider Lord.png" type="Texture" id=2]
-[ext_resource path="res://came.gd" type="Script" id=3]
-[ext_resource path="res://Platform_test.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Platform_test.tscn" type="PackedScene" id=3]
+[ext_resource path="res://test.gd" type="Script" id=4]
 [ext_resource path="res://Spider2.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -11,7 +11,7 @@ extents = Vector2( 71, 43.5 )
 
 [node name="Main" type="Node2D"]
 position = Vector2( 47, 55 )
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 position = Vector2( -13, -19 )
@@ -41,11 +41,11 @@ texture = ExtResource( 2 )
 position = Vector2( 12, 0 )
 shape = SubResource( 1 )
 
-[node name="Platform_test" parent="." instance=ExtResource( 4 )]
+[node name="Platform_test" parent="." instance=ExtResource( 3 )]
 position = Vector2( 242, 97 )
 
-[node name="Platform_test2" parent="." instance=ExtResource( 4 )]
+[node name="Platform_test2" parent="." instance=ExtResource( 3 )]
 position = Vector2( -4, 102 )
 
-[node name="Platform_test3" parent="." instance=ExtResource( 4 )]
+[node name="Platform_test3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 110, 105 )

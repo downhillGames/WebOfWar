@@ -11,7 +11,7 @@ var newplatform9 = preload("res://platform9.tscn")
 var newplatform10 = preload("res://platform10.tscn")
 
 var speed = 100
-
+var height = 0
 
 
 
@@ -20,10 +20,13 @@ var speed = 100
 
 var object_array = []
 
-func _ready():	
+func _ready():
+	
+	
 	var object
 	var rand = randi() % 6
-	for i in range(5):
+	for i in range(200):
+		height = height - rand_range(100, 300)
 		if  i%2==0:
 
 			if rand== 1:
@@ -54,24 +57,23 @@ func _ready():
 	
 		self. add_child(object)
 		object_array.append(object)
-		object.position = Vector2(rand_range(0, 500), rand_range(0, 1000))
+		object.position = Vector2(rand_range(0, 500), height)
 	while check_distance():
 		randomize_positions()
 
 
 
 func _process(delta):
-	pass
-	#position.y += speed * delta
+	position.y += speed * delta
 
 
 func check_distance():
 	for i in range(len(object_array)):
 		for j in range(i+1, len(object_array)):
-			if object_array[i].position.distance_to(object_array[j].position) < 25:
+			if object_array[i].position.distance_to(object_array[j].position) < 30:
 				return true
 	return false
 
 func randomize_positions():
 	for object in object_array:
-		object.position = Vector2(rand_range(0, 500), rand_range(0, 1000))
+		object.position = Vector2(rand_range(0, 500), height)

@@ -2,72 +2,45 @@ extends KinematicBody2D
 
 const WALK_SPEED = 200
 
-#Jump 
-export var fall_gravity_scale := 150.0
-export var low_jump_gravity_scale := 100.0
-export var jump_power := 500.0
-var jump_released = false
+# Jump
+export var jump_height := 500.0
+export var jump_duration := 0.2
 
-#Physics
+# Physics
 var velocity = Vector2()
 var earth_gravity = 9.807 # m/s^2
 export var gravity_scale := 100.0
 var on_floor = false
-var mass = 1.0
-var impact_force = 500.0
+var jump_timer = 0
 
+func _ready():
+	add_to_group("knockable")
 
-func _physics_process(delta):
-	if Input.is_action_just_released("ui_accept"):
-		jump_released = true
-
-
-
-
-	# Check for collisions with other KinematicBody2D objects
-	for i in range(get_slide_count()):
-		var other = get_slide_collision(i).collider
-		if Input.is_action_pressed("punch1"):
-			if other.is_in_group("knockable"):
-				# Calculate the force to apply based on the velocity and mass of this object
-				var force = impact_force * mass
-				var direction = (other.position - position).normalized()
-
-				# Apply the force to the other object
-					#Applying gravity to player
-				other.move_and_slide(Vector2(10000, 0))
-
-
-	#Applying gravity to player
-	velocity += Vector2.DOWN * earth_gravity * gravity_scale * delta
-
-	#Jump Physics
-	if velocity.y > 0: #Player is falling
-		#Falling action is faster than jumping action | Like in mario
-		#On falling we apply a second gravity to the player
-		#We apply ((gravity_scale + fall_gravity_scale) * earth_gravity) gravity on the player
-		velocity += Vector2.DOWN * earth_gravity * fall_gravity_scale * delta 
-
-	elif velocity.y < 0 && jump_released: #Player is jumping 
-		#Jump Height depends on how long you will hold key
-		#If we release the jump before reaching the max height 
-		#We apply ((gravity_scale + low_jump_gravity_scale) * earth_gravity) gravity on the player
-		#It result on a lower jump
-		velocity += Vector2.DOWN * earth_gravity * low_jump_gravity_scale * delta
-
-	if on_floor:
-		if Input.is_action_just_pressed("ui_accept"): 
-			velocity = Vector2.UP * jump_power #Normal Jump action
-			jump_released = false
+func _process(delta):
+	# Movement logic
+	if 1>0:
 		if Input.is_action_pressed("ui_left"):
 			velocity.x = -WALK_SPEED
 		elif Input.is_action_pressed("ui_right"):
-			velocity.x =  WALK_SPEED
+			velocity.x = WALK_SPEED
 		else:
 			velocity.x = 0
+	# Jump logic
+	jump(delta)
 
-	velocity = move_and_slide(velocity, Vector2.UP) 
-
-	if is_on_floor(): on_floor = true
-	else: on_floor = false
-
+func jump(delta):
+	if on_floor:
+		if Input.is_action_just_pressed("ui_accept"):
+			velocity.y = -jump_height
+			jump_timer = jump_duration
+		if Input.is_action_just_released("ui_accept") || jump_timer <= 0:
+			jump_timer = 0
+	if jump_timer > 0:
+		jump_timer -= delta
+		velocity.y = -jump_height * (jump_timer / jump_duration)
+	velocity.y += earth_gravity * gravity_scale * delta
+	velocity = move_and_slide(velocity, Vector2.UP)
+	if is_on_floor():
+		on_floor = true
+	else:
+		on_floor = false

@@ -15,6 +15,7 @@ export var gravity_scale := 100.0
 var on_floor = false
 
 
+
 func _physics_process(delta):
 	if Input.is_action_just_released("ui_accept"):
 		jump_released = true
@@ -51,3 +52,6 @@ func _physics_process(delta):
 
 	if is_on_floor(): on_floor = true
 	else: on_floor = false
+
+
+

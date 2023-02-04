@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Platform_test.tscn" type="PackedScene" id=1]
+
+[node name="platform2" type="Node2D"]
+
+[node name="Platform_test" parent="." instance=ExtResource( 1 )]
+position = Vector2( -71, -8 )
+
+[node name="Platform_test2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 6, -55 )
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Platform_test3" parent="." instance=ExtResource( 1 )]
+position = Vector2( -134, 38 )
+scale = Vector2( 0.73083, 0.364173 )
+
+[node name="Platform_test4" parent="." instance=ExtResource( 1 )]
+position = Vector2( -27, -60 )
+rotation = -1.55167
+scale = Vector2( 0.5, 0.267999 )
+
+[node name="Platform_test5" parent="." instance=ExtResource( 1 )]
+position = Vector2( -150, -46 )
+scale = Vector2( 0.763948, 0.163657 )

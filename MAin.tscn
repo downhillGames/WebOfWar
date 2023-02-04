@@ -2,12 +2,13 @@
 
 [ext_resource path="res://Spider.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Spider Lord.png" type="Texture" id=2]
-[ext_resource path="res://Platform_test.tscn" type="PackedScene" id=3]
+[ext_resource path="res://test.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 56, 43.5 )
 
 [node name="Main" type="Node2D"]
+script = ExtResource( 4 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 script = ExtResource( 1 )
@@ -20,11 +21,3 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
 position = Vector2( 5, 8.5 )
 shape = SubResource( 1 )
-
-[node name="StaticBody2D" parent="." instance=ExtResource( 3 )]
-
-[node name="StaticBody2D2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 267, -103 )
-
-[node name="StaticBody2D3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 683, -135 )

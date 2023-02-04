@@ -15,6 +15,9 @@ export var gravity_scale := 100.0
 var on_floor = false
 
 
+func _ready():
+	add_to_group("knockable")
+	
 func _physics_process(delta):
 	if Input.is_action_just_released("ui_accept"):
 		jump_released = true
@@ -40,9 +43,9 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("ui_accept"): 
 			velocity = Vector2.UP * jump_power #Normal Jump action
 			jump_released = false
-		if Input.is_action_pressed("ui_left"):
+		if Input.is_action_pressed("2p_left"):
 			velocity.x = -WALK_SPEED
-		elif Input.is_action_pressed("ui_right"):
+		elif Input.is_action_pressed("2p_right"):
 			velocity.x =  WALK_SPEED
 		else:
 			velocity.x = 0

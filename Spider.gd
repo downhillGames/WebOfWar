@@ -13,12 +13,30 @@ var velocity = Vector2()
 var earth_gravity = 9.807 # m/s^2
 export var gravity_scale := 100.0
 var on_floor = false
-
+var mass = 1.0
+var impact_force = 500.0
 
 
 func _physics_process(delta):
 	if Input.is_action_just_released("ui_accept"):
 		jump_released = true
+
+
+
+
+	# Check for collisions with other KinematicBody2D objects
+	for i in range(get_slide_count()):
+		var other = get_slide_collision(i).collider
+		if Input.is_action_pressed("punch1"):
+			if other.is_in_group("knockable"):
+				# Calculate the force to apply based on the velocity and mass of this object
+				var force = impact_force * mass
+				var direction = (other.position - position).normalized()
+
+				# Apply the force to the other object
+					#Applying gravity to player
+				other.move_and_slide(Vector2(10000, 0))
+
 
 	#Applying gravity to player
 	velocity += Vector2.DOWN * earth_gravity * gravity_scale * delta

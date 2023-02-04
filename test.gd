@@ -22,28 +22,36 @@ var object_array = []
 
 func _ready():	
 	var object
-	var rand = randi() % 10 + 1
+	var rand = randi() % 6
 	for i in range(5):
-		if rand == 1:
-			object = newplatform1.instance()
-		elif rand == 2:
-			object = newplatform2.instance()
-		elif rand== 3:
-			object = newplatform3.instance()
-		elif rand== 4:
-			object = newplatform4.instance()
-		elif rand== 5:
-			object = newplatform5.instance()
-		elif rand== 6:
-			object = newplatform6.instance()
-		elif rand== 7:
-			object = newplatform7.instance()
-		elif rand== 8:
-			object = newplatform8.instance()
-		elif rand== 9:
-			object = newplatform9.instance()
-		elif rand== 10:
-			object = newplatform10.instance()
+		if  i%2==0:
+
+			if rand== 1:
+				object = newplatform2.instance()
+			elif rand== 2:
+				object = newplatform4.instance()
+			elif rand== 3:
+				object = newplatform6.instance()
+			elif rand== 4:
+				object = newplatform8.instance()
+			elif rand== 5:
+				object = newplatform10.instance()
+				
+		elif  i%2==1:
+				
+			if rand== 1:
+				object = newplatform1.instance()
+			elif rand== 2:
+				object = newplatform3.instance()
+			elif rand== 3:
+				object = newplatform5.instance()
+			elif rand== 4:
+				object = newplatform6.instance()
+			elif rand== 5:
+				object = newplatform9.instance()
+
+				
+	
 		self. add_child(object)
 		object_array.append(object)
 		object.position = Vector2(rand_range(0, 500), rand_range(0, 1000))
@@ -53,8 +61,8 @@ func _ready():
 
 
 func _process(delta):
-	position.y += speed * delta
-
+	#position.y += speed * delta
+	pass
 func check_distance():
 	for i in range(len(object_array)):
 		for j in range(i+1, len(object_array)):

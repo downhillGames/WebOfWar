@@ -18,10 +18,10 @@ position = Vector2( 145, -356 )
 scale = Vector2( 0.328088, 0.714746 )
 
 [node name="Platform_test4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 202, -22 )
+position = Vector2( 206, 14 )
 
 [node name="Platform_test5" parent="." instance=ExtResource( 1 )]
-position = Vector2( -294, -219 )
+position = Vector2( -310, -220 )
 scale = Vector2( 0.591231, 0.213552 )
 
 [node name="Platform_test6" parent="." instance=ExtResource( 1 )]
@@ -30,10 +30,10 @@ rotation = -0.839529
 scale = Vector2( 0.209598, 1.67994 )
 
 [node name="Platform_test7" parent="." instance=ExtResource( 1 )]
-position = Vector2( 280, -23 )
+position = Vector2( 278, 62 )
 
 [node name="Platform_test8" parent="." instance=ExtResource( 1 )]
-position = Vector2( 188, -317 )
+position = Vector2( 103, -266 )
 scale = Vector2( -1.45925, -0.291168 )
 
 [node name="Platform_test9" parent="." instance=ExtResource( 1 )]

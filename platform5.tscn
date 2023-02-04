@@ -5,18 +5,21 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Platform_test" parent="." instance=ExtResource( 1 )]
-position = Vector2( -166, 71 )
+position = Vector2( -85, 61 )
+rotation = -0.0110145
 scale = Vector2( 1.00837, 0.307525 )
 
 [node name="Platform_test2" parent="." instance=ExtResource( 1 )]
-position = Vector2( -78, -11 )
+position = Vector2( 18, 81 )
+rotation = 0.222466
 scale = Vector2( 0.828141, 0.186138 )
 
 [node name="Platform_test3" parent="." instance=ExtResource( 1 )]
-position = Vector2( -79, 8 )
+position = Vector2( -197, -30 )
+rotation = -0.903347
 scale = Vector2( 0.131012, 1.64404 )
 
 [node name="Platform_test4" parent="." instance=ExtResource( 1 )]
-position = Vector2( -140, 50 )
-rotation = -0.111974
+position = Vector2( 134, 127 )
+rotation = 0.0971303
 scale = Vector2( 1.03997, 0.173445 )

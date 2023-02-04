@@ -71,5 +71,3 @@ func _physics_process(delta):
 	if is_on_floor(): on_floor = true
 	else: on_floor = false
 
-
-

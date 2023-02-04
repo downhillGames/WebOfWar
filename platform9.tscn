@@ -5,18 +5,18 @@
 [node name="platform9" type="Node2D"]
 
 [node name="Platform_test" parent="." instance=ExtResource( 1 )]
-position = Vector2( -265, -101 )
+position = Vector2( -280, -129 )
 scale = Vector2( 0.272709, 0.358368 )
 
 [node name="Platform_test2" parent="." instance=ExtResource( 1 )]
-position = Vector2( -242, -51 )
+position = Vector2( -243, -79 )
 
 [node name="Platform_test3" parent="." instance=ExtResource( 1 )]
-position = Vector2( -200, -5 )
+position = Vector2( -172, -29 )
 
 [node name="Platform_test4" parent="." instance=ExtResource( 1 )]
-position = Vector2( -140, 18 )
+position = Vector2( -104, 40 )
 scale = Vector2( 0.771987, -0.298564 )
 
 [node name="Platform_test5" parent="." instance=ExtResource( 1 )]
-position = Vector2( -79, 41 )
+position = Vector2( 11, 61 )

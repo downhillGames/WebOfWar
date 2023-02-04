@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Spider.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Spider Lord.png" type="Texture" id=2]
@@ -7,11 +7,69 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 56, 43.5 )
 
+[sub_resource type="GDScript" id=2]
+script/source = "extends KinematicBody2D
+
+const WALK_SPEED = 200
+
+#Jump 
+export var fall_gravity_scale := 150.0
+export var low_jump_gravity_scale := 100.0
+export var jump_power := 500.0
+var jump_released = false
+
+#Physics
+var velocity = Vector2()
+var earth_gravity = 9.807 # m/s^2
+export var gravity_scale := 100.0
+var on_floor = false
+
+
+func _physics_process(delta):
+	if Input.is_action_just_released(\"ui_accept\"):
+		jump_released = true
+
+	#Applying gravity to player
+	velocity += Vector2.DOWN * earth_gravity * gravity_scale * delta
+
+	#Jump Physics
+	if velocity.y > 0: #Player is falling
+		#Falling action is faster than jumping action | Like in mario
+		#On falling we apply a second gravity to the player
+		#We apply ((gravity_scale + fall_gravity_scale) * earth_gravity) gravity on the player
+		velocity += Vector2.DOWN * earth_gravity * fall_gravity_scale * delta 
+
+	elif velocity.y < 0 && jump_released: #Player is jumping 
+		#Jump Height depends on how long you will hold key
+		#If we release the jump before reaching the max height 
+		#We apply ((gravity_scale + low_jump_gravity_scale) * earth_gravity) gravity on the player
+		#It result on a lower jump
+		velocity += Vector2.DOWN * earth_gravity * low_jump_gravity_scale * delta
+
+	if on_floor:
+		if Input.is_action_just_pressed(\"ui_accept\"): 
+			velocity = Vector2.UP * jump_power #Normal Jump action
+			jump_released = false
+		if Input.is_action_pressed(\"ui_left\"):
+			velocity.x = -WALK_SPEED
+		elif Input.is_action_pressed(\"ui_right\"):
+			velocity.x =  WALK_SPEED
+		else:
+			velocity.x = 0
+
+	velocity = move_and_slide(velocity, Vector2.UP) 
+
+	if is_on_floor(): on_floor = true
+	else: on_floor = false
+"
+
 [node name="Main" type="Node2D"]
 position = Vector2( 47, 55 )
 script = ExtResource( 4 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( -13, -19 )
+scale = Vector2( 0.25, 0.25 )
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="KinematicBody2D"]
@@ -20,5 +78,19 @@ scale = Vector2( 0.251064, 0.325342 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 5, 7 )
+shape = SubResource( 1 )
+
+[node name="KinematicBody2D2" type="KinematicBody2D" parent="."]
+position = Vector2( 165, -27 )
+scale = Vector2( 0.25, 0.25 )
+script = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="KinematicBody2D2"]
+position = Vector2( 3, 5.00001 )
+scale = Vector2( 0.251064, 0.325342 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D2"]
 position = Vector2( 5, 8.5 )
 shape = SubResource( 1 )

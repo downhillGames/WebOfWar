@@ -10,6 +10,7 @@ func _ready():
 func newPlatform(x, y):
 	var newplatformNode = newplatform.instance()
 	newplatformNode.position = Vector2 (x,y)
+	newplatformNode.position = Vector2 (25,100)
 	self.add_child(newplatformNode)
 
 var rand= randi () %1000

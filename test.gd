@@ -59,7 +59,7 @@ func _ready():
 		object_array.append(object)
 		height = height + rand_range(100, 200)
 		height = height - rand_range(100, 200)
-		object.position = Vector2(rand_range(0, 500), height)
+		object.position = Vector2(rand_range(100, 200), height)
 		
 	while check_distance():
 		randomize_positions()

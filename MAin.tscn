@@ -56,7 +56,7 @@ script = ExtResource( 11 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Background/ParallaxBackground/Node2D"]
 
 [node name="background pt2" type="Sprite" parent="Background/ParallaxBackground/Node2D"]
-position = Vector2( 289, 487 )
+position = Vector2( 293, 469 )
 scale = Vector2( 3.15736, 2.55584 )
 texture = ExtResource( 14 )
 
@@ -70,7 +70,7 @@ position = Vector2( 8, 0 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Napalm"]
-position = Vector2( 8, 4 )
+position = Vector2( 8, 28 )
 scale = Vector2( 0.357372, 0.358654 )
 texture = ExtResource( 6 )
 hframes = 4
@@ -112,7 +112,7 @@ scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 248, 439 )
+position = Vector2( 247, 337 )
 current = true
 
 [node name="Node2D" parent="." instance=ExtResource( 9 )]

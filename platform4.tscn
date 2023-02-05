@@ -3,21 +3,23 @@
 [ext_resource path="res://Platform_test.tscn" type="PackedScene" id=1]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2( 321, 472 )
+scale = Vector2( 0.646443, 0.909074 )
 
 [node name="Platform_test" parent="." instance=ExtResource( 1 )]
-position = Vector2( -28, -20 )
+position = Vector2( 78.8932, 12.1002 )
 
 [node name="Platform_test2" parent="." instance=ExtResource( 1 )]
-position = Vector2( -99, 0 )
+position = Vector2( 21.6569, 11.0002 )
 
 [node name="Platform_test3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 40, -45 )
+position = Vector2( 129.942, 15.4003 )
 
 [node name="Platform_test4" parent="." instance=ExtResource( 1 )]
-position = Vector2( -80, 137 )
+position = Vector2( -105.191, -9.90021 )
 
 [node name="Platform_test5" parent="." instance=ExtResource( 1 )]
-position = Vector2( -162, 55 )
+position = Vector2( -44.8608, 9.90015 )
 
 [node name="Platform_test6" parent="." instance=ExtResource( 1 )]
-position = Vector2( -269, 51 )
+position = Vector2( -167.068, -44.0009 )

@@ -6,27 +6,27 @@
 scale = Vector2( 0.970749, 0.59053 )
 
 [node name="Platform_test" parent="." instance=ExtResource( 1 )]
-position = Vector2( -240.021, 123.618 )
+position = Vector2( 232.81, 541.886 )
 scale = Vector2( -0.694973, 1.30768 )
 
 [node name="Platform_test4" parent="." instance=ExtResource( 1 )]
-position = Vector2( -428.514, 50.7646 )
+position = Vector2( 340.057, 460.698 )
 rotation = 0.00368677
 scale = Vector2( 0.429013, 0.594125 )
 
 [node name="Platform_test2" parent="." instance=ExtResource( 1 )]
-position = Vector2( -347.235, 135.528 )
+position = Vector2( 335.936, 529.935 )
 rotation = 0.011236
 scale = Vector2( -0.750295, 1.30509 )
 
 [node name="Platform_test3" parent="." instance=ExtResource( 1 )]
-position = Vector2( -488.516, 60.9281 )
+position = Vector2( 273.862, 513.436 )
 rotation = 0.0257756
 scale = Vector2( 0.402057, 0.749654 )
 
 [node name="Platform_test5" parent="." instance=ExtResource( 1 )]
-position = Vector2( -169.972, 76.2027 )
+position = Vector2( 389.39, 440.282 )
 
 [node name="Platform_test" parent="Platform_test5" instance=ExtResource( 1 )]
-position = Vector2( 144.219, -27.0943 )
+position = Vector2( 133.917, -13.5471 )
 scale = Vector2( 0.76582, 0.991918 )

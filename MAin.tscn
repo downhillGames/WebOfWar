@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Spider.gd" type="Script" id=1]
 [ext_resource path="res://Web O War - spider vector 1.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://first_screen.mp3" type="AudioStream" id=8]
 [ext_resource path="res://platform6.tscn" type="PackedScene" id=9]
 [ext_resource path="res://icon.png" type="Texture" id=10]
+[ext_resource path="res://webofwar_background.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 83, 43.5 )
@@ -34,6 +35,15 @@ tracks/0/keys = {
 [node name="Main" type="Node2D"]
 position = Vector2( 47, 55 )
 script = ExtResource( 4 )
+
+[node name="background image" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="background image"]
+position = Vector2( 249, 440 )
+scale = Vector2( 2.72222, 2.29398 )
+texture = ExtResource( 11 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="background image"]
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 position = Vector2( 165, 31 )
@@ -76,10 +86,6 @@ stream = ExtResource( 8 )
 autoplay = true
 script = ExtResource( 7 )
 
-[node name="Node2D" parent="." instance=ExtResource( 9 )]
-position = Vector2( 53, 659 )
-scale = Vector2( 0.25, 0.25 )
-
 [node name="SPAWN" type="Node2D" parent="."]
 position = Vector2( 235, -40 )
 scale = Vector2( 0.25, 0.25 )
@@ -90,3 +96,7 @@ texture = ExtResource( 10 )
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 248, 439 )
 current = true
+
+[node name="Node2D" parent="." instance=ExtResource( 9 )]
+position = Vector2( 53, 659 )
+scale = Vector2( 0.25, 0.25 )

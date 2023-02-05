@@ -31,6 +31,8 @@ func _physics_process(delta):
 	if position.x > viewport_rect.position.x + viewport_rect.size.x:
 		position.x = viewport_rect.position.x
 	# Movement logic
+	if Input.is_action_pressed("punch1"):
+		$AnimationPlayer.play("slash")
 	for i in range(get_slide_count()):
 		var other = get_slide_collision(i).collider
 		if Input.is_action_pressed("punch1"):

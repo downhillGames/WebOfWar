@@ -35,7 +35,7 @@ func _physics_process(delta):
 	# Movement logic
 	for i in range(get_slide_count()):
 		var other = get_slide_collision(i).collider
-		if Input.is_action_pressed("punch1"):
+		if Input.is_action_pressed("punch2"):
 			if other.is_in_group("knockable"):
 				# Calculate the force to apply based on the velocity and mass of this object
 				var force = impact_force * mass

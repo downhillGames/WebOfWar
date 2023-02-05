@@ -68,7 +68,6 @@ func _process(delta):
 	pass
 	#position.y += speed * delta
 
-
 func check_distance():
 	for i in range(len(object_array)):
 		for j in range(i+1, len(object_array)):

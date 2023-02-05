@@ -59,6 +59,3 @@ func jump(delta):
 		on_floor = true
 	else:
 		on_floor = false
-
-# Create a Tween object and add it to the node you want to animate
-

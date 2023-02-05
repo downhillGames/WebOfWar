@@ -5,26 +5,27 @@
 [node name="platform3" type="Node2D"]
 
 [node name="Platform_test" parent="." instance=ExtResource( 1 )]
-position = Vector2( 108, 30 )
-__meta__ = {
-"_edit_lock_": true
-}
+position = Vector2( -6, 40 )
+rotation = -0.621794
+scale = Vector2( 0.075223, 0.84837 )
 
 [node name="Platform_test2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 106, -35 )
+position = Vector2( -102, 14 )
+scale = Vector2( -1.04668, 0.210881 )
 
 [node name="Platform_test3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 46, -63 )
+position = Vector2( -59, 85 )
+rotation = 0.31817
+scale = Vector2( 1.52901, -0.138945 )
 
 [node name="Platform_test4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 0, -62 )
+position = Vector2( -198, -72 )
+rotation = 0.426317
+scale = Vector2( 0.690208, -0.128579 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Platform_test5" parent="." instance=ExtResource( 1 )]
-position = Vector2( -49, -32 )
-
-[node name="Platform_test6" parent="." instance=ExtResource( 1 )]
-position = Vector2( -104, -2 )
-
-[node name="Platform_test7" parent="." instance=ExtResource( 1 )]
-position = Vector2( -83, 18 )
-scale = Vector2( -0.443648, 0.464406 )
+position = Vector2( -98, 18 )
+scale = Vector2( 0.356014, 1.80037 )

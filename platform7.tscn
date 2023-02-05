@@ -5,22 +5,38 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Platform_test" parent="." instance=ExtResource( 1 )]
-position = Vector2( -180, 23 )
+position = Vector2( -19, -277 )
+rotation = -0.446743
+scale = Vector2( 1.49365, 0.175152 )
 
 [node name="Platform_test2" parent="." instance=ExtResource( 1 )]
-position = Vector2( -130, -16 )
+position = Vector2( 62, -27 )
+scale = Vector2( 1.23983, 0.269946 )
 
 [node name="Platform_test3" parent="." instance=ExtResource( 1 )]
-position = Vector2( -76, 25 )
+position = Vector2( 145, -356 )
+scale = Vector2( 0.328088, 0.714746 )
 
 [node name="Platform_test4" parent="." instance=ExtResource( 1 )]
-position = Vector2( -9, 50 )
+position = Vector2( 206, 14 )
 
 [node name="Platform_test5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 58, -13 )
+position = Vector2( -310, -220 )
+scale = Vector2( 0.591231, 0.213552 )
 
 [node name="Platform_test6" parent="." instance=ExtResource( 1 )]
-position = Vector2( -248, 92 )
+position = Vector2( -275, -155 )
+rotation = -0.839529
+scale = Vector2( 0.209598, 1.67994 )
 
-[node name="Platform_test" parent="Platform_test6" instance=ExtResource( 1 )]
-position = Vector2( 550, -262 )
+[node name="Platform_test7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 278, 62 )
+
+[node name="Platform_test8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 103, -266 )
+scale = Vector2( -1.45925, -0.291168 )
+
+[node name="Platform_test9" parent="." instance=ExtResource( 1 )]
+position = Vector2( -120, -53 )
+rotation = -1.13921
+scale = Vector2( 0.279789, 1.92564 )

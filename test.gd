@@ -11,7 +11,7 @@ var newplatform9 = preload("res://platform9.tscn")
 var newplatform10 = preload("res://platform10.tscn")
 
 var speed = 100
-var height = 0
+var height = 500
 
 
 

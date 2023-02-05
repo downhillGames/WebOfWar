@@ -1,13 +1,46 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Spider.gd" type="Script" id=1]
 [ext_resource path="res://Web O War - spider vector 1.png" type="Texture" id=2]
 [ext_resource path="res://platform10.tscn" type="PackedScene" id=3]
 [ext_resource path="res://test.gd" type="Script" id=4]
 [ext_resource path="res://Spider2.gd" type="Script" id=5]
+[ext_resource path="res://webofwar_spider_attack_animation_placeholder.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 83, 43.5 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Slash"
+length = 0.6
+step = 0.09
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.09, 0.18, 0.27, 0.36, 0.45, 0.54 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 2, 1, 0 ]
+}
 
 [node name="Main" type="Node2D"]
 position = Vector2( 47, 55 )
@@ -23,9 +56,15 @@ position = Vector2( 8, 8 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="KinematicBody2D"]
-position = Vector2( 520, 216 )
+position = Vector2( 12, 12 )
 scale = Vector2( 0.109062, 0.143089 )
-texture = ExtResource( 2 )
+texture = ExtResource( 6 )
+hframes = 4
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
+anims/RESET = SubResource( 2 )
+anims/Slash = SubResource( 3 )
 
 [node name="Trash" type="KinematicBody2D" parent="."]
 position = Vector2( 114, 35 )
@@ -37,7 +76,7 @@ position = Vector2( 12, 0 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Trash"]
-position = Vector2( -500, -208 )
+position = Vector2( 16, 4 )
 scale = Vector2( 0.109062, 0.143089 )
 texture = ExtResource( 2 )
 

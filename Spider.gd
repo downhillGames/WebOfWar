@@ -45,7 +45,8 @@ func _physics_process(delta):
 		if lives == 1:
 			get_parent().get_node("Control").get_node("Sprite2").visible = false
 		if lives == 0:
-			get_parent().get_node("Control").get_node("Sprite1").visible = false
+			get_parent().get_node("Control").get_node("Sprite").visible = false
+			get_tree().change_scene("res://Title.tscn")
 		position.y = get_parent().get_node("SPAWN").position.y
 	# Movement logic
 	if Input.is_action_pressed("punch1"):

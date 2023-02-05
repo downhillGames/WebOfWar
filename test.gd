@@ -21,8 +21,9 @@ var height = 0
 var object_array = []
 
 func _ready():
-	
 	randomize()
+	
+	
 	var object
 	var rand = randi() % 6
 	for i in range(200):

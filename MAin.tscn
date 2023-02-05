@@ -1,7 +1,7 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Spider.gd" type="Script" id=1]
-[ext_resource path="res://trash slash.png" type="Texture" id=2]
+[ext_resource path="res://WOW_-_Trash_Walking_Animation.png" type="Texture" id=2]
 [ext_resource path="res://platform10.tscn" type="PackedScene" id=3]
 [ext_resource path="res://test.gd" type="Script" id=4]
 [ext_resource path="res://Spider2.gd" type="Script" id=5]
@@ -15,6 +15,8 @@
 [ext_resource path="res://webofwar_background_layer_2.png" type="Texture" id=13]
 [ext_resource path="res://webofwar_background_layer_1.png" type="Texture" id=14]
 [ext_resource path="res://webofwar_heartweb.png" type="Texture" id=15]
+[ext_resource path="res://WOW_-_Napalm_Slash_Animation.png" type="Texture" id=16]
+[ext_resource path="res://WOW_-_Trash_Slash_Animation.png" type="Texture" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 113.344, 53.4375 )
@@ -50,6 +52,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 2, 2, 1, 0 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 16 ) ]
+}
 
 [sub_resource type="Animation" id=6]
 resource_name = "slash2"
@@ -68,6 +82,42 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 0, 1, 2 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 6 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../Trash/Sprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.75, 0.75 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../Trash/Sprite:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ) ]
+}
 
 [sub_resource type="Animation" id=7]
 length = 0.001
@@ -82,6 +132,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -99,6 +161,30 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 2, 1, 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 17 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.75, 0.75 ) ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -129,6 +215,30 @@ tracks/0/keys = {
 "transitions": PoolRealArray(  ),
 "update": 1,
 "values": [  ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 0 ), Vector2( 2, 0 ), Vector2( 3, 0 ) ]
 }
 
 [node name="Main" type="Node2D"]
@@ -278,8 +388,10 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Trash"]
 position = Vector2( 16, 4 )
+scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 2 )
 hframes = 4
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Trash"]
 anims/RESET = SubResource( 7 )

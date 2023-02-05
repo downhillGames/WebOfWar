@@ -46,13 +46,13 @@ func _physics_process(delta):
 			get_tree().change_scene("res://Title.tscn")
 		position.y = get_parent().get_node("SPAWN").position.y
 	# Movement logic
-	if Input.is_action_pressed("punch"):
+	if Input.is_action_pressed("punch2"):
 		$AnimationPlayer.play("Slash")
 		
 	# Movement logic
 	for i in range(get_slide_count()):
 		var other = get_slide_collision(i).collider
-		if Input.is_action_pressed("punch2"):
+		if Input.is_action_pressed("punch1"):
 			if other.is_in_group("knockable"):
 				# Calculate the force to apply based on the velocity and mass of this object
 				var _force = impact_force * mass

@@ -3,6 +3,7 @@ extends KinematicBody2D
 const WALK_SPEED = 200
 
 # Jump
+
 export var jump_height := 2000.0
 export var jump_duration := 0.2
 
@@ -14,6 +15,7 @@ var on_floor = false
 var mass = .25
 var impact_force = 500.0
 var jump_timer = 0
+var lives = 5
 	
 func _ready():
 	add_to_group("knockable")
@@ -33,6 +35,17 @@ func _physics_process(delta):
 		position.y = position.y - 300
 		position.x = viewport_rect.position.x
 	if position.y > get_parent().get_node("Camera2D").position.y + viewport_rect.size.y:
+		lives -= 1
+		if lives == 4:
+			get_parent().get_node("Control").get_node("Sprite5").visible = false
+		if lives == 3:
+			get_parent().get_node("Control").get_node("Sprite4").visible = false
+		if lives == 2:
+			get_parent().get_node("Control").get_node("Sprite3").visible = false
+		if lives == 1:
+			get_parent().get_node("Control").get_node("Sprite2").visible = false
+		if lives == 0:
+			get_parent().get_node("Control").get_node("Sprite1").visible = false
 		position.y = get_parent().get_node("SPAWN").position.y
 	# Movement logic
 	if Input.is_action_pressed("punch1"):

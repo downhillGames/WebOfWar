@@ -14,6 +14,7 @@ var on_floor = false
 var mass = .5
 var impact_force = 500.0
 var jump_timer = 0
+var lives = 5
 
 	
 func _ready():
@@ -29,12 +30,20 @@ func _physics_process(delta):
 		position.y = position.y - 300
 		position.x = viewport_rect.position.x + viewport_rect.size.x
 		
-	if position.x > viewport_rect.position.x + viewport_rect.size.x:
-		position.y = position.y - 300
-		position.x = viewport_rect.position.x - 50
-
 	if position.y > get_parent().get_node("Camera2D").position.y + viewport_rect.size.y:
+		lives -= 1
+		if lives == 4:
+			get_parent().get_node("Control").get_node("Sprite10").visible = false
+		if lives == 3:
+			get_parent().get_node("Control").get_node("Sprite9").visible = false
+		if lives == 2:
+			get_parent().get_node("Control").get_node("Sprite8").visible = false
+		if lives == 1:
+			get_parent().get_node("Control").get_node("Sprite7").visible = false
+		if lives == 0:
+			get_parent().get_node("Control").get_node("Sprite6").visible = false
 		position.y = get_parent().get_node("SPAWN").position.y
+
 		
 	# Movement logic
 	for i in range(get_slide_count()):

@@ -46,7 +46,7 @@ func _physics_process(delta):
 			get_tree().change_scene("res://Title.tscn")
 		position.y = get_parent().get_node("SPAWN").position.y
 	# Movement logic
-	if Input.is_action_pressed("punch2"):
+	if Input.is_action_pressed("punch1"):
 		$AnimationPlayer.play("Slash")
 		
 	# Movement logic

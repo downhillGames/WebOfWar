@@ -21,12 +21,10 @@ position = Vector2( 327, 548 )
 shape = SubResource( 1 )
 
 [node name="Control" type="Control" parent="."]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control"]
-visible = false
 margin_left = 123.0
 margin_top = 68.0
 margin_right = 198.0
@@ -35,6 +33,7 @@ rect_scale = Vector2( 5, 5 )
 text = "Trash Wins!"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Control"]
+visible = false
 margin_left = 74.0
 margin_top = 136.0
 margin_right = 175.0

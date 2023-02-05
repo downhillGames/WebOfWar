@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Spider.gd" type="Script" id=1]
 [ext_resource path="res://Web O War - spider vector 1.png" type="Texture" id=2]
@@ -35,6 +35,9 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3, 2, 1, 0 ]
 }
+
+[sub_resource type="Animation" id=4]
+resource_name = "walk"
 
 [node name="Main" type="Node2D"]
 position = Vector2( 47, 55 )
@@ -74,10 +77,10 @@ position = Vector2( 8, 28 )
 scale = Vector2( 0.357372, 0.358654 )
 texture = ExtResource( 6 )
 hframes = 4
-frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Napalm"]
 anims/Slash = SubResource( 3 )
+anims/walk = SubResource( 4 )
 
 [node name="Trash" type="KinematicBody2D" parent="."]
 position = Vector2( 114, 35 )

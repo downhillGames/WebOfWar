@@ -1,15 +1,21 @@
 extends Node2D
 
-
+var global = preload("res://global.gd")
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
 
+
 var mouse_over_fight = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	pass
+		#if global.winner == 1:
+		#get_node("Control").get_node("RichTextLabel2").visible = true
+		#get_node("Control").get_node("RichTextLabel1").visible = false
+		#if global.winner == 2:
+		#get_node("Control").get_node("RichTextLabel2").visible = false
+		#get_node("Control").get_node("RichTextLabel1").visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

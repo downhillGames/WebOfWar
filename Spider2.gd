@@ -15,7 +15,7 @@ var mass = .5
 var impact_force = 500.0
 var jump_timer = 0
 var lives = 5
-
+var global = preload("res://global.gd")
 	
 func _ready():
 	add_to_group("knockable")
@@ -41,6 +41,7 @@ func _physics_process(delta):
 		if lives == 1:
 			get_parent().get_node("Control").get_node("Sprite7").visible = false
 		if lives == 0:
+			global.winner = 1
 			get_parent().get_node("Control").get_node("Sprite6").visible = false
 			get_tree().change_scene("res://Title.tscn")
 		position.y = get_parent().get_node("SPAWN").position.y

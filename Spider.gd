@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 const WALK_SPEED = 200
-
+var global = preload("res://global.gd")
 # Jump
 
 export var jump_height := 2000.0
@@ -46,6 +46,7 @@ func _physics_process(delta):
 			get_parent().get_node("Control").get_node("Sprite2").visible = false
 		if lives == 0:
 			get_parent().get_node("Control").get_node("Sprite").visible = false
+			global.winner = 2
 			get_tree().change_scene("res://Title.tscn")
 		position.y = get_parent().get_node("SPAWN").position.y
 	# Movement logic

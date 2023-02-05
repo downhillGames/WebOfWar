@@ -30,6 +30,8 @@ func _physics_process(delta):
 		position.x = viewport_rect.position.x + viewport_rect.size.x
 	if position.x > viewport_rect.position.x + viewport_rect.size.x:
 		position.x = viewport_rect.position.x
+	if position.y > viewport_rect.position.y + viewport_rect.size.y:
+		position.y = viewport_rect.position.y
 	# Movement logic
 	if Input.is_action_pressed("punch1"):
 		$AnimationPlayer.play("Slash")

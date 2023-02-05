@@ -27,7 +27,7 @@ func _ready():
 	var object
 	var rand = randi() % 6
 	for i in range(200):
-		height = height - rand_range(100, 300)
+		height = height - rand_range(100, 200)
 		if  i%2==0:
 
 			if rand== 1:
@@ -58,7 +58,10 @@ func _ready():
 	
 		self. add_child(object)
 		object_array.append(object)
+		height = height + rand_range(100, 200)
+		height = height - rand_range(100, 200)
 		object.position = Vector2(rand_range(0, 500), height)
+		
 	while check_distance():
 		randomize_positions()
 

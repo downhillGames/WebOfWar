@@ -32,6 +32,9 @@ func _physics_process(delta):
 	if position.x > viewport_rect.position.x + viewport_rect.size.x:
 		position.y = position.y - 100
 		position.x = viewport_rect.position.x - 50
+
+	if position.y > viewport_rect.position.y + viewport_rect.size.y:
+		position.y = viewport_rect.position.y
 	# Movement logic
 	for i in range(get_slide_count()):
 		var other = get_slide_collision(i).collider

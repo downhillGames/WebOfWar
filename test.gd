@@ -55,7 +55,7 @@ func _ready():
 				object = newplatform9.instance()
 
 
-		self. add_child(object)
+		$Panels.add_child(object)
 		object_array.append(object)
 		height = height + rand_range(100, 200)
 		height = height - rand_range(100, 200)

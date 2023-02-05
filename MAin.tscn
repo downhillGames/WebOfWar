@@ -101,6 +101,9 @@ stream = ExtResource( 8 )
 autoplay = true
 script = ExtResource( 7 )
 
+[node name="Panels" type="Node2D" parent="."]
+position = Vector2( 235, -40 )
+
 [node name="SPAWN" type="Node2D" parent="."]
 position = Vector2( 235, -40 )
 scale = Vector2( 0.25, 0.25 )
@@ -114,7 +117,7 @@ current = true
 
 [node name="Node2D" parent="." instance=ExtResource( 9 )]
 position = Vector2( 53, 659 )
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 1, 0.25 )
 
 [node name="Control" type="Node2D" parent="."]
 

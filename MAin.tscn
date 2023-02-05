@@ -1,11 +1,11 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Spider.gd" type="Script" id=1]
-[ext_resource path="res://Web O War - spider vector 1.png" type="Texture" id=2]
+[ext_resource path="res://trash slash.png" type="Texture" id=2]
 [ext_resource path="res://platform10.tscn" type="PackedScene" id=3]
 [ext_resource path="res://test.gd" type="Script" id=4]
 [ext_resource path="res://Spider2.gd" type="Script" id=5]
-[ext_resource path="res://webofwar_spider_attack_animation_placeholder.png" type="Texture" id=6]
+[ext_resource path="res://walking.png" type="Texture" id=6]
 [ext_resource path="res://AudioStreamPlayer.gd" type="Script" id=7]
 [ext_resource path="res://first_screen.mp3" type="AudioStream" id=8]
 [ext_resource path="res://platform6.tscn" type="PackedScene" id=9]
@@ -17,7 +17,22 @@
 [ext_resource path="res://webofwar_heartweb.png" type="Texture" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 77.375, 26.875 )
+extents = Vector2( 113.344, 53.4375 )
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "Slash"
@@ -36,8 +51,23 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 2, 1, 0 ]
 }
 
+[sub_resource type="Animation" id=6]
+resource_name = "slash2"
+
 [sub_resource type="Animation" id=4]
 resource_name = "walk"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
 
 [node name="Main" type="Node2D"]
 position = Vector2( 47, 55 )
@@ -59,7 +89,7 @@ script = ExtResource( 11 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Background/ParallaxBackground/Node2D"]
 
 [node name="background pt2" type="Sprite" parent="Background/ParallaxBackground/Node2D"]
-position = Vector2( 293, 469 )
+position = Vector2( 294, 469 )
 scale = Vector2( 3.15736, 2.55584 )
 texture = ExtResource( 14 )
 
@@ -69,17 +99,18 @@ scale = Vector2( 0.25, 0.25 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Napalm"]
-position = Vector2( 8, 0 )
+position = Vector2( 14.6562, 12 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Napalm"]
-position = Vector2( 8, 28 )
-scale = Vector2( 0.357372, 0.358654 )
+position = Vector2( 4, 3.988 )
 texture = ExtResource( 6 )
 hframes = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Napalm"]
+anims/RESET = SubResource( 5 )
 anims/Slash = SubResource( 3 )
+anims/slash2 = SubResource( 6 )
 anims/walk = SubResource( 4 )
 
 [node name="Trash" type="KinematicBody2D" parent="."]
@@ -93,8 +124,11 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Trash"]
 position = Vector2( 16, 4 )
-scale = Vector2( 0.109062, 0.143089 )
 texture = ExtResource( 2 )
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Trash"]
+root_node = NodePath("../..")
 
 [node name="platform10" parent="." instance=ExtResource( 3 )]
 position = Vector2( 308, 780 )

@@ -43,7 +43,9 @@ func _physics_process(delta):
 		if lives == 0:
 			get_parent().get_node("Control").get_node("Sprite6").visible = false
 		position.y = get_parent().get_node("SPAWN").position.y
-
+	# Movement logic
+	if Input.is_action_pressed("punch2"):
+		$AnimationPlayer.play("Slash2")
 		
 	# Movement logic
 	for i in range(get_slide_count()):
@@ -60,7 +62,9 @@ func _physics_process(delta):
 	if 1>0:
 		if Input.is_action_pressed("2p_left"):
 			velocity.x = -WALK_SPEED
+			$AnimationPlayer.play("walk")
 		elif Input.is_action_pressed("2p_right"):
+			$AnimationPlayer.play("walk")
 			velocity.x = WALK_SPEED
 		else:
 			velocity.x = 0

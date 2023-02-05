@@ -1,6 +1,6 @@
 extends Node2D
 var newplatform1 = preload("res://platform1.tscn")
-var newplatform2 =preload("res://platform2.tscn")
+var newplatform2 = preload("res://platform2.tscn")
 var newplatform3 = preload("res://platform3.tscn")
 var newplatform4 = preload("res://platform4.tscn")
 var newplatform5 = preload("res://platform5.tscn")
@@ -8,7 +8,7 @@ var newplatform6 = preload("res://platform6.tscn")
 var newplatform7 = preload("res://platform7.tscn")
 var newplatform8 = preload("res://platform8.tscn")
 var newplatform9 = preload("res://platform9.tscn")
-var newplatform10 = preload("res://platform10.tscn")
+var newplatform10 =preload("res://platform10.tscn")
 
 var speed = 75
 var height = 500

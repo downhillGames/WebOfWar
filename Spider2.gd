@@ -3,8 +3,8 @@ extends KinematicBody2D
 const WALK_SPEED = 200
 
 # Jump
-export var jump_height := 1200.0
-export var jump_duration := 0.2
+export var jump_height := 2000.0
+export var jump_duration := 0.3
 
 #Physics
 var velocity = Vector2()
@@ -42,8 +42,8 @@ func _physics_process(delta):
 		if Input.is_action_pressed("punch2"):
 			if other.is_in_group("knockable"):
 				# Calculate the force to apply based on the velocity and mass of this object
-				var force = impact_force * mass
-				var direction = (other.position - position).normalized()
+				var _force = impact_force * mass
+				var _direction = (other.position - position).normalized()
 				if self.position.x > other.position.x:
 					other.move_and_slide(Vector2(-3000, 0))
 				if self.position.x < other.position.x:

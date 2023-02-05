@@ -10,7 +10,7 @@ var newplatform8 = preload("res://platform8.tscn")
 var newplatform9 = preload("res://platform9.tscn")
 var newplatform10 = preload("res://platform10.tscn")
 
-var speed = 100
+var speed = 50
 var height = 0
 
 
@@ -65,7 +65,8 @@ func _ready():
 
 
 func _process(delta):
-	position.y += speed * delta
+	pass
+	#position.y += speed * delta
 
 
 func check_distance():

@@ -14,7 +14,7 @@ var speed = 100
 var height = 500
 
 
-var devmode = true
+var devmode = false
 
 #Platfrom array generation and rerandomization
 

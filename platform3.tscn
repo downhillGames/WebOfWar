@@ -11,20 +11,20 @@ __meta__ = {
 }
 
 [node name="Platform_test2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 106, -35 )
+position = Vector2( 168, -24 )
 
 [node name="Platform_test3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 46, -63 )
+position = Vector2( 49, -8 )
 
 [node name="Platform_test4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 0, -62 )
+position = Vector2( -1, -19 )
 
 [node name="Platform_test5" parent="." instance=ExtResource( 1 )]
-position = Vector2( -49, -32 )
+position = Vector2( -48, -7 )
 
 [node name="Platform_test6" parent="." instance=ExtResource( 1 )]
 position = Vector2( -104, -2 )
 
 [node name="Platform_test7" parent="." instance=ExtResource( 1 )]
-position = Vector2( -83, 18 )
+position = Vector2( -167, 7 )
 scale = Vector2( -0.443648, 0.464406 )

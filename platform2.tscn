@@ -8,19 +8,19 @@
 position = Vector2( -80, 10 )
 
 [node name="Platform_test2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 90, 81 )
+position = Vector2( -51, -32 )
 scale = Vector2( 0.25, 0.25 )
 
 [node name="Platform_test3" parent="." instance=ExtResource( 1 )]
-position = Vector2( -234, -45 )
-rotation = -0.444815
+position = Vector2( -166, -21 )
+rotation = 0.000161231
 scale = Vector2( 0.643187, 0.625721 )
 
 [node name="Platform_test4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 120, -112 )
+position = Vector2( 100, -43 )
 rotation = -0.462806
 scale = Vector2( 0.5, 0.267999 )
 
 [node name="Platform_test5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 22, -103 )
+position = Vector2( 7, -29 )
 scale = Vector2( 0.763948, 0.163657 )

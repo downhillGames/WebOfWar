@@ -15,9 +15,9 @@ var mass = .5
 var impact_force = 500.0
 var jump_timer = 0
 
+	
 func _ready():
 	add_to_group("knockable")
-
 
 
 

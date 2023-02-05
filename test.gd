@@ -54,8 +54,7 @@ func _ready():
 			elif rand== 5:
 				object = newplatform9.instance()
 
-				
-	
+
 		self. add_child(object)
 		object_array.append(object)
 		height = height + rand_range(100, 200)
@@ -71,7 +70,8 @@ func _process(delta):
 	if devmode:
 		pass
 	else:
-		position.y += speed * delta
+		$Camera2D.position.y -= speed * delta
+		$SPAWN.position.y -= speed * delta
 
 func check_distance():
 	for i in range(len(object_array)):

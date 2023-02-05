@@ -26,15 +26,16 @@ func _physics_process(delta):
 	var viewport_rect = viewport.get_visible_rect()
 
 	if position.x < viewport_rect.position.x - 50:
-		position.y = position.y - 100
+		position.y = position.y - 300
 		position.x = viewport_rect.position.x + viewport_rect.size.x
 		
 	if position.x > viewport_rect.position.x + viewport_rect.size.x:
-		position.y = position.y - 100
+		position.y = position.y - 300
 		position.x = viewport_rect.position.x - 50
 
-	if position.y > viewport_rect.position.y + viewport_rect.size.y:
-		position.y = viewport_rect.position.y
+	if position.y > get_parent().get_node("Camera2D").position.y + viewport_rect.size.y:
+		position.y = get_parent().get_node("SPAWN").position.y
+		
 	# Movement logic
 	for i in range(get_slide_count()):
 		var other = get_slide_collision(i).collider

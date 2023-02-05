@@ -27,11 +27,13 @@ func _physics_process(delta):
 	var viewport_rect = viewport.get_visible_rect()
 
 	if position.x < viewport_rect.position.x:
+		position.y = position.y - 300
 		position.x = viewport_rect.position.x + viewport_rect.size.x
 	if position.x > viewport_rect.position.x + viewport_rect.size.x:
+		position.y = position.y - 300
 		position.x = viewport_rect.position.x
-	if position.y > viewport_rect.position.y + viewport_rect.size.y:
-		position.y = viewport_rect.position.y
+	if position.y > get_parent().get_node("Camera2D").position.y + viewport_rect.size.y:
+		position.y = get_parent().get_node("SPAWN").position.y
 	# Movement logic
 	if Input.is_action_pressed("punch1"):
 		$AnimationPlayer.play("Slash")

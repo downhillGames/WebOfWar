@@ -5,7 +5,7 @@
 [ext_resource path="res://platform10.tscn" type="PackedScene" id=3]
 [ext_resource path="res://test.gd" type="Script" id=4]
 [ext_resource path="res://Spider2.gd" type="Script" id=5]
-[ext_resource path="res://WOW_-_Napalm_Slash_Animation.png" type="Texture" id=6]
+[ext_resource path="res://WOW_-_Napalm_Walking_Animation.png" type="Texture" id=6]
 [ext_resource path="res://AudioStreamPlayer.gd" type="Script" id=7]
 [ext_resource path="res://first_screen.mp3" type="AudioStream" id=8]
 [ext_resource path="res://platform6.tscn" type="PackedScene" id=9]
@@ -63,10 +63,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3 ]
+"values": [ 0, 1, 2 ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -125,10 +125,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
 "update": 1,
-"values": [ 0, 1, 2, 3 ]
+"values": [  ]
 }
 
 [node name="Main" type="Node2D"]
@@ -256,7 +256,8 @@ position = Vector2( 14.6562, 12 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Napalm"]
-position = Vector2( 4, 4 )
+position = Vector2( 12, 2.00002 )
+scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 6 )
 hframes = 4
 

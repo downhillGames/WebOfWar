@@ -10,7 +10,7 @@ var newplatform8 = preload("res://platform8.tscn")
 var newplatform9 = preload("res://platform9.tscn")
 var newplatform10 = preload("res://platform10.tscn")
 
-var speed = 50
+var speed = 100
 var height = 0
 
 
@@ -21,8 +21,9 @@ var height = 0
 var object_array = []
 
 func _ready():
-	
 	randomize()
+	
+	
 	var object
 	var rand = randi() % 6
 	for i in range(200):
@@ -64,8 +65,7 @@ func _ready():
 
 
 func _process(delta):
-	pass
-	#position.y += speed * delta
+	position.y += speed * delta
 
 
 func check_distance():

@@ -139,6 +139,7 @@ script = ExtResource( 4 )
 script = ExtResource( 12 )
 
 [node name="Sprite" type="Sprite" parent="Background"]
+visible = false
 position = Vector2( 249, 446 )
 scale = Vector2( 2.72222, 2.29398 )
 texture = ExtResource( 13 )
@@ -151,9 +152,99 @@ script = ExtResource( 11 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Background/ParallaxBackground/Node2D"]
 
 [node name="background pt2" type="Sprite" parent="Background/ParallaxBackground/Node2D"]
-position = Vector2( 293, 471 )
+position = Vector2( 293, 445 )
 scale = Vector2( 3.15736, 2.55584 )
 texture = ExtResource( 14 )
+
+[node name="background pt5" type="Sprite" parent="Background/ParallaxBackground/Node2D"]
+position = Vector2( 294, -2387 )
+scale = Vector2( 3.15736, 2.55584 )
+texture = ExtResource( 14 )
+
+[node name="background pt6" type="Sprite" parent="Background/ParallaxBackground/Node2D"]
+position = Vector2( 289, -3273 )
+scale = Vector2( 3.15736, 2.55584 )
+texture = ExtResource( 14 )
+
+[node name="background pt9" type="Sprite" parent="Background/ParallaxBackground/Node2D"]
+position = Vector2( 300, -4223 )
+scale = Vector2( 3.15736, 2.55584 )
+texture = ExtResource( 14 )
+
+[node name="background pt10" type="Sprite" parent="Background/ParallaxBackground/Node2D"]
+position = Vector2( 308, -5190 )
+scale = Vector2( 3.15736, 2.55584 )
+texture = ExtResource( 14 )
+
+[node name="background pt11" type="Sprite" parent="Background/ParallaxBackground/Node2D"]
+position = Vector2( 304, -6141 )
+scale = Vector2( 3.15736, 2.55584 )
+texture = ExtResource( 14 )
+
+[node name="background pt3" type="Sprite" parent="Background/ParallaxBackground/Node2D"]
+position = Vector2( 289, -498 )
+scale = Vector2( 3.15736, 2.55584 )
+texture = ExtResource( 14 )
+
+[node name="background pt4" type="Sprite" parent="Background/ParallaxBackground/Node2D"]
+position = Vector2( 291, -1434 )
+scale = Vector2( 3.15736, 2.55584 )
+texture = ExtResource( 14 )
+
+[node name="background pt7" type="Sprite" parent="Background/ParallaxBackground/Node2D"]
+position = Vector2( 291, -1434 )
+scale = Vector2( 3.15736, 2.55584 )
+texture = ExtResource( 14 )
+
+[node name="background pt8" type="Sprite" parent="Background/ParallaxBackground/Node2D"]
+position = Vector2( 291, -1434 )
+scale = Vector2( 3.15736, 2.55584 )
+texture = ExtResource( 14 )
+
+[node name="Node2D2" type="Node2D" parent="Background/ParallaxBackground"]
+script = ExtResource( 11 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Background/ParallaxBackground/Node2D2"]
+
+[node name="Sprite" type="Sprite" parent="Background/ParallaxBackground/Node2D2"]
+position = Vector2( 294, 452 )
+scale = Vector2( 2.78704, 2.35185 )
+texture = ExtResource( 13 )
+
+[node name="Sprite2" type="Sprite" parent="Background/ParallaxBackground/Node2D2"]
+position = Vector2( 294, -512 )
+scale = Vector2( 2.78704, 2.35185 )
+texture = ExtResource( 13 )
+
+[node name="Sprite3" type="Sprite" parent="Background/ParallaxBackground/Node2D2"]
+position = Vector2( 298, -1448 )
+scale = Vector2( 2.78704, 2.35185 )
+texture = ExtResource( 13 )
+
+[node name="Sprite4" type="Sprite" parent="Background/ParallaxBackground/Node2D2"]
+position = Vector2( 301, -2390 )
+scale = Vector2( 2.78704, 2.35185 )
+texture = ExtResource( 13 )
+
+[node name="Sprite5" type="Sprite" parent="Background/ParallaxBackground/Node2D2"]
+position = Vector2( 307, -3321 )
+scale = Vector2( 2.78704, 2.35185 )
+texture = ExtResource( 13 )
+
+[node name="Sprite6" type="Sprite" parent="Background/ParallaxBackground/Node2D2"]
+position = Vector2( 304, -4269 )
+scale = Vector2( 2.78704, 2.35185 )
+texture = ExtResource( 13 )
+
+[node name="Sprite7" type="Sprite" parent="Background/ParallaxBackground/Node2D2"]
+position = Vector2( 307, -5173 )
+scale = Vector2( 2.78704, 2.35185 )
+texture = ExtResource( 13 )
+
+[node name="Sprite8" type="Sprite" parent="Background/ParallaxBackground/Node2D2"]
+position = Vector2( 315, -6152 )
+scale = Vector2( 2.78704, 2.35185 )
+texture = ExtResource( 13 )
 
 [node name="Napalm" type="KinematicBody2D" parent="."]
 position = Vector2( 181, 45 )
@@ -207,6 +298,7 @@ script = ExtResource( 7 )
 position = Vector2( 235, -40 )
 
 [node name="SPAWN" type="Node2D" parent="."]
+visible = false
 position = Vector2( 235, -40 )
 scale = Vector2( 0.25, 0.25 )
 

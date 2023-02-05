@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Spider.gd" type="Script" id=1]
 [ext_resource path="res://Web O War - spider vector 1.png" type="Texture" id=2]
@@ -14,9 +14,10 @@
 [ext_resource path="res://Background.gd" type="Script" id=12]
 [ext_resource path="res://webofwar_background_layer_2.png" type="Texture" id=13]
 [ext_resource path="res://webofwar_background_layer_1.png" type="Texture" id=14]
+[ext_resource path="res://webofwar_heartweb.png" type="Texture" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 62.75, 26.875 )
+extents = Vector2( 77.375, 26.875 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "Slash"
@@ -55,7 +56,7 @@ script = ExtResource( 11 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Background/ParallaxBackground/Node2D"]
 
 [node name="background pt2" type="Sprite" parent="Background/ParallaxBackground/Node2D"]
-position = Vector2( 297, 484 )
+position = Vector2( 289, 487 )
 scale = Vector2( 3.15736, 2.55584 )
 texture = ExtResource( 14 )
 
@@ -114,3 +115,65 @@ current = true
 [node name="Node2D" parent="." instance=ExtResource( 9 )]
 position = Vector2( 53, 659 )
 scale = Vector2( 0.25, 0.25 )
+
+[node name="Control" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Control"]
+position = Vector2( -185.343, 35.0337 )
+scale = Vector2( 0.0833333, 0.0825792 )
+texture = ExtResource( 15 )
+offset = Vector2( 1880.61, -826.888 )
+
+[node name="Sprite2" type="Sprite" parent="Control"]
+position = Vector2( -134.221, 30.2921 )
+scale = Vector2( 0.0766219, 0.0780543 )
+texture = ExtResource( 15 )
+offset = Vector2( 1880.61, -826.888 )
+
+[node name="Sprite3" type="Sprite" parent="Control"]
+position = Vector2( -98, 30.0001 )
+scale = Vector2( 0.0766219, 0.0780543 )
+texture = ExtResource( 15 )
+offset = Vector2( 1880.61, -826.888 )
+
+[node name="Sprite4" type="Sprite" parent="Control"]
+position = Vector2( -63, 31 )
+scale = Vector2( 0.0766219, 0.0780543 )
+texture = ExtResource( 15 )
+offset = Vector2( 1880.61, -826.888 )
+
+[node name="Sprite5" type="Sprite" parent="Control"]
+position = Vector2( -28, 31 )
+scale = Vector2( 0.0766219, 0.0780543 )
+texture = ExtResource( 15 )
+offset = Vector2( 1880.61, -826.888 )
+
+[node name="Sprite6" type="Sprite" parent="Control"]
+position = Vector2( 380, 27 )
+scale = Vector2( 0.0766219, 0.0780543 )
+texture = ExtResource( 15 )
+offset = Vector2( 1880.61, -826.888 )
+
+[node name="Sprite7" type="Sprite" parent="Control"]
+position = Vector2( 344, 27 )
+scale = Vector2( 0.0766219, 0.0780543 )
+texture = ExtResource( 15 )
+offset = Vector2( 1880.61, -826.888 )
+
+[node name="Sprite8" type="Sprite" parent="Control"]
+position = Vector2( 306, 27 )
+scale = Vector2( 0.0766219, 0.0780543 )
+texture = ExtResource( 15 )
+offset = Vector2( 1880.61, -826.888 )
+
+[node name="Sprite9" type="Sprite" parent="Control"]
+position = Vector2( 407, -28 )
+scale = Vector2( 0.0766219, 0.0780543 )
+texture = ExtResource( 15 )
+offset = Vector2( 92.6101, -122.25 )
+
+[node name="Sprite10" type="Sprite" parent="Control"]
+position = Vector2( 372, -29 )
+scale = Vector2( 0.0766219, 0.0780543 )
+texture = ExtResource( 15 )
+offset = Vector2( 92.6101, -122.25 )

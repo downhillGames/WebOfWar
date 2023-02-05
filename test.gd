@@ -72,6 +72,7 @@ func _process(delta):
 	else:
 		$Camera2D.position.y -= speed * delta
 		$SPAWN.position.y -= speed * delta
+		$Control.position.y -= speed * delta
 
 func check_distance():
 	for i in range(len(object_array)):

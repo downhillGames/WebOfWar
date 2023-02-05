@@ -1,6 +1,6 @@
 extends Node2D
 
-var global = preload("res://global.gd")
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -9,7 +9,7 @@ var global = preload("res://global.gd")
 var mouse_over_fight = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+		pass
 		#if global.winner == 1:
 		#get_node("Control").get_node("RichTextLabel2").visible = true
 		#get_node("Control").get_node("RichTextLabel1").visible = false

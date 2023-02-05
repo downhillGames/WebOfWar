@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Spider.gd" type="Script" id=1]
 [ext_resource path="res://trash slash.png" type="Texture" id=2]
@@ -69,6 +69,68 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Slash"
+length = 0.6
+step = 0.09
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.09, 0.18, 0.27, 0.36, 0.45, 0.54 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 2, 1, 0 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "slash2"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 2, 0 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "walk"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
 [node name="Main" type="Node2D"]
 position = Vector2( 47, 55 )
 script = ExtResource( 4 )
@@ -89,7 +151,7 @@ script = ExtResource( 11 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Background/ParallaxBackground/Node2D"]
 
 [node name="background pt2" type="Sprite" parent="Background/ParallaxBackground/Node2D"]
-position = Vector2( 294, 469 )
+position = Vector2( 293, 471 )
 scale = Vector2( 3.15736, 2.55584 )
 texture = ExtResource( 14 )
 
@@ -128,7 +190,10 @@ texture = ExtResource( 2 )
 hframes = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Trash"]
-root_node = NodePath("../..")
+anims/RESET = SubResource( 7 )
+anims/Slash = SubResource( 8 )
+anims/slash2 = SubResource( 9 )
+anims/walk = SubResource( 10 )
 
 [node name="platform10" parent="." instance=ExtResource( 3 )]
 position = Vector2( 308, 780 )

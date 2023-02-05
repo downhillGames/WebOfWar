@@ -49,6 +49,7 @@ func _physics_process(delta):
 		position.y = get_parent().get_node("SPAWN").position.y
 	# Movement logic
 	if Input.is_action_pressed("punch1"):
+		$AnimationPlayer.stop()
 		$AnimationPlayer.play("Slash")
 		
 	for i in range(get_slide_count()):

@@ -3,7 +3,7 @@ extends KinematicBody2D
 const WALK_SPEED = 200
 
 # Jump
-export var jump_height := 1200.0
+export var jump_height := 2000.0
 export var jump_duration := 0.2
 
 #Physics
@@ -11,7 +11,7 @@ var velocity = Vector2()
 var earth_gravity = 9.807 # m/s^2
 export var gravity_scale := 100.0
 var on_floor = false
-var mass = .5
+var mass = .25
 var impact_force = 500.0
 var jump_timer = 0
 
@@ -32,7 +32,8 @@ func _physics_process(delta):
 		position.x = viewport_rect.position.x
 	# Movement logic
 	if Input.is_action_pressed("punch1"):
-		$AnimationPlayer.play("slash")
+		$AnimationPlayer.play("Slash")
+		
 	for i in range(get_slide_count()):
 		var other = get_slide_collision(i).collider
 		if Input.is_action_pressed("punch1"):

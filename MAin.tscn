@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Spider.gd" type="Script" id=1]
 [ext_resource path="res://Web O War - spider vector 1.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://webofwar_spider_attack_animation_placeholder.png" type="Texture" id=6]
 [ext_resource path="res://AudioStreamPlayer.gd" type="Script" id=7]
 [ext_resource path="res://first_screen.mp3" type="AudioStream" id=8]
+[ext_resource path="res://platform6.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 83, 43.5 )
@@ -51,6 +52,9 @@ frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
 anims/Slash = SubResource( 3 )
+
+[node name="Node2D" parent="KinematicBody2D" instance=ExtResource( 9 )]
+position = Vector2( -444, 2500 )
 
 [node name="Trash" type="KinematicBody2D" parent="."]
 position = Vector2( 114, 35 )

@@ -14,7 +14,7 @@ var speed = 100
 var height = 500
 
 
-
+var devmode = true
 
 #Platfrom array generation and rerandomization
 
@@ -65,8 +65,10 @@ func _ready():
 
 
 func _process(delta):
-	pass
-	#position.y += speed * delta
+	if devmode:
+		pass
+	else:
+		position.y += speed * delta
 
 func check_distance():
 	for i in range(len(object_array)):

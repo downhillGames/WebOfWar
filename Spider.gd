@@ -1,77 +1,73 @@
 extends KinematicBody2D
 
 const WALK_SPEED = 200
-var global = preload("res://global.gd")
-# Jump
 
+# Jump
 export var jump_height := 2000.0
-export var jump_duration := 0.2
+export var jump_duration := 0.3
 
 #Physics
 var velocity = Vector2()
 var earth_gravity = 9.807 # m/s^2
 export var gravity_scale := 100.0
 var on_floor = false
-var mass = .25
+var mass = .5
 var impact_force = 500.0
 var jump_timer = 0
 var lives = 5
+var global = preload("res://global.gd")
 	
 func _ready():
 	add_to_group("knockable")
 
 
 
-		
 func _physics_process(delta):
-	
 	var viewport = get_viewport()
 	var viewport_rect = viewport.get_visible_rect()
 
-	if position.x < viewport_rect.position.x:
+	if position.x < viewport_rect.position.x - 50:
 		position.y = position.y - 300
 		position.x = viewport_rect.position.x + viewport_rect.size.x
-	if position.x > viewport_rect.position.x + viewport_rect.size.x:
-		position.y = position.y - 300
-		position.x = viewport_rect.position.x
+		
 	if position.y > get_parent().get_node("Camera2D").position.y + viewport_rect.size.y:
 		lives -= 1
 		if lives == 4:
-			get_parent().get_node("Control").get_node("Sprite5").visible = false
+			get_parent().get_node("Control").get_node("Sprite10").visible = false
 		if lives == 3:
-			get_parent().get_node("Control").get_node("Sprite4").visible = false
+			get_parent().get_node("Control").get_node("Sprite9").visible = false
 		if lives == 2:
-			get_parent().get_node("Control").get_node("Sprite3").visible = false
+			get_parent().get_node("Control").get_node("Sprite8").visible = false
 		if lives == 1:
-			get_parent().get_node("Control").get_node("Sprite2").visible = false
+			get_parent().get_node("Control").get_node("Sprite7").visible = false
 		if lives == 0:
-			get_parent().get_node("Control").get_node("Sprite").visible = false
-			global.winner = 2
+			global.winner = 1
+			get_parent().get_node("Control").get_node("Sprite6").visible = false
 			get_tree().change_scene("res://Title.tscn")
 		position.y = get_parent().get_node("SPAWN").position.y
 	# Movement logic
-	if Input.is_action_pressed("punch1"):
+	if Input.is_action_pressed("punch"):
 		$AnimationPlayer.play("Slash")
 		
+	# Movement logic
 	for i in range(get_slide_count()):
 		var other = get_slide_collision(i).collider
-		if Input.is_action_pressed("punch1"):
+		if Input.is_action_pressed("punch2"):
 			if other.is_in_group("knockable"):
 				# Calculate the force to apply based on the velocity and mass of this object
 				var _force = impact_force * mass
 				var _direction = (other.position - position).normalized()
 				if self.position.x > other.position.x:
-					other.move_and_slide(Vector2(-6000, 0))
+					other.move_and_slide(Vector2(-3000, 0))
 				if self.position.x < other.position.x:
-					other.move_and_slide(Vector2(6000, 0))
+					other.move_and_slide(Vector2(3000, 0))
 	if 1>0:
 		if Input.is_action_pressed("ui_left"):
 			velocity.x = -WALK_SPEED
 			$AnimationPlayer.play("walk")
-			
 		elif Input.is_action_pressed("ui_right"):
-			velocity.x = WALK_SPEED
 			$AnimationPlayer.play("walk")
+			velocity.x = WALK_SPEED
 		else:
 			velocity.x = 0
 	# Jump logic
@@ -93,17 +89,5 @@ func jump(delta):
 		on_floor = true
 	else:
 		on_floor = false
-		
-		
-		if Input.is_action_pressed("ui_left"):
-			pass
-			
-			
-			
-			
-			
-			
-			
-			
-			
-	
+
+# Create a Tween object and add it to the node you want to animate

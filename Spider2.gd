@@ -20,7 +20,18 @@ func _ready():
 
 
 
+
 func _physics_process(delta):
+	var viewport = get_viewport()
+	var viewport_rect = viewport.get_visible_rect()
+
+	if position.x < viewport_rect.position.x - 50:
+		position.y = position.y - 100
+		position.x = viewport_rect.position.x + viewport_rect.size.x
+		
+	if position.x > viewport_rect.position.x + viewport_rect.size.x:
+		position.y = position.y - 100
+		position.x = viewport_rect.position.x - 50
 	# Movement logic
 	for i in range(get_slide_count()):
 		var other = get_slide_collision(i).collider

@@ -65,7 +65,8 @@ func _ready():
 
 
 func _process(delta):
-	position.y += speed * delta
+	pass
+	#position.y += speed * delta
 
 
 func check_distance():
